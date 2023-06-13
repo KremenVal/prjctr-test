@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite Sounds</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="./public/assets/css/theme.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <span class="header__container-back">Back</span>
+            <ul class="header__container-list">
+                <li class="header__container-item favorite"></li>
+                <li class="header__container-item saved"></li>
+            </ul>
+        </div>
+    </header>
+    <div class="main">
+        <section class="content container">
+            <form class="search"
+                  action="#">
+                <label for="artist">
+                    <input type="text"
+                           class="search__artist"
+                           placeholder="Artist"
+                           data-length="10"
+                           value=""
+                           id="artist"
+                           name="artist">
+                    <span class="search__artist-error">You reached the maximum of length for search.</span>
+                </label>
+                <div class="search__empty">
+                    <ul class="search__select"
+                        id="genre">
+                        <li class="search__select-item-selected"></li>
+                        <li class="search__select-item selected"
+                            data-value="">Genre</li>
+                        <li class="search__select-item"
+                            data-value="rock">Rock</li>
+                        <li class="search__select-item"
+                            data-value="funk">Funk</li>
+                        <li class="search__select-item"
+                            data-value="beats">Beats</li>
+                        <li class="search__select-item"
+                            data-value="hip hop">Hip Hop</li>
+                        <li class="search__select-item"
+                            data-value="pop">Pop</li>
+                        <li class="search__select-item"
+                            data-value="rap">Rap</li>
+                    </ul>
+                    <ul class="search__select"
+                        id="decade">
+                        <li class="search__select-item-selected"></li>
+                        <li class="search__select-item selected"
+                            data-value="">Decade</li>
+                        <li class="search__select-item"
+                            data-value="1950-1960">1950-60 рр.</li>
+                        <li class="search__select-item"
+                            data-value="1960-1970">1960-70 рр.</li>
+                        <li class="search__select-item"
+                            data-value="1970-1980">1970-80 рр.</li>
+                        <li class="search__select-item"
+                            data-value="1980-1990">1980-90 рр.</li>
+                        <li class="search__select-item"
+                            data-value="1990-2000">1990-00 рр.</li>
+                        <li class="search__select-item"
+                            data-value="2000-2010">2000-10 рр.</li>
+                        <li class="search__select-item"
+                            data-value="2010-2020">2010-20 рр.</li>
+                        <li class="search__select-item"
+                            data-value="2020-2030">2020-30 рр.</li>
+                    </ul>
+                </div>
+                <div class="search__empty">
+                    <ul class="search__select"
+                        id="country">
+                        <li class="search__select-item-selected"></li>
+                        <li class="search__select-item selected"
+                            data-value="">Country</li>
+                        <li class="search__select-item"
+                            data-value="usa">USA</li>
+                        <li class="search__select-item"
+                            data-value="uk">UK</li>
+                        <li class="search__select-item"
+                            data-value="ua">UA</li>
+                        <li class="search__select-item"
+                            data-value="pl">PL</li>
+                        <li class="search__select-item"
+                            data-value="uae">UAE</li>
+                        <li class="search__select-item"
+                            data-value="jp">JP</li>
+                    </ul>
+                </div>
+                <button type="submit"
+                        class="search__submit">Search</button>
+            </form>
+            <ul class="songs"></ul>
+            <nav class="pagination">
+            </nav>
+        </section>
+    </div>
+    <script src="./public/assets/js/theme.js"></script>
+</body>
+</html>

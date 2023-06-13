@@ -1,0 +1,175 @@
+.songs {
+  max-width: 800px;
+  margin: 4px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    margin: 10px auto 0;
+  }
+
+  &__item {
+    max-width: calc(50% - 6px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 14px;
+
+    @media (min-width: 640px) {
+      max-width: calc(50% - 10px);
+      flex-direction: row;
+    }
+
+    &-img {
+      border-radius: 8px;
+    }
+
+    &-favorite {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 10px;
+      left: 10px;
+      border-radius: 4px;
+      background: {
+        size: 13px 11px;
+        position: center;
+        repeat: no-repeat;
+        image: url(../img/songs/favorite.svg);
+        color: #fff;
+      };
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background-image: url(../img/songs/favorite-selected.svg);
+      }
+
+      &[data-favorite="true"] {
+        background-image: url(../img/songs/favorite-selected.svg);
+      }
+    }
+
+    &-song {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      color: #0A2530;
+      margin-top: 8px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+      @media (min-width: 640px) {
+        font-size: 16px;
+        margin-top: 0;
+      }
+    }
+
+    &-band {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: #0A2530;
+      margin-top: 3px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+      @media (min-width: 768px) {
+        font-size: 16px;
+        margin-top: 5px;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      @media (min-width: 640px) {
+        margin-left: 10px;
+        width: 100%;
+      }
+    }
+
+    &-year, &-style, &-country {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #738286;
+      margin-top: 7px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+      span {
+        color: #0A2530;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+
+    &-style, &-country {
+      margin-top: 3px;
+
+      @media (min-width: 768px) {
+        margin-top: 5px;
+      }
+    }
+
+    &-add {
+      width: 100%;
+      background-color: #0A2530;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      border: none;
+      color: #FFFFFF;
+      padding: 12px 0;
+      margin-top: 11px;
+      cursor: pointer;
+      transition: all .3s;
+
+      @media (min-width: 768px) {
+        margin-top: 10px;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-left: 6px;
+        background: {
+          size: 13px 13px;
+          repeat: no-repeat;
+          position: center;
+          image: url(../img/songs/add.svg);
+        };
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        background-color: darken(#0A2530, 5%);
+      }
+    }
+  }
+}

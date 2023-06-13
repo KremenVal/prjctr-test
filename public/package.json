@@ -1,0 +1,26 @@
+{
+    "name": "kremen",
+    "version": "1.0.0",
+    "description": "Just webpack",
+    "main": "index.js",
+    "scripts": {
+        "watch": "webpack --progress --watch --mode=development"
+    },
+    "author": "Kremen",
+    "license": "AFL-3.0",
+    "devDependencies": {
+        "mini-css-extract-plugin": "^2.7.5",
+        "webpack": "^5.80.0",
+        "webpack-cli": "^5.0.1",
+        "webpack-sources": "^3.2.3",
+        "css-loader": "^6.7.3",
+        "postcss-flexibility": "^3.0.0",
+        "postcss-loader": "^7.2.4",
+        "sass-loader": "^13.2.2",
+        "esbuild-loader": "^3.0.1"
+    },
+    "dependencies": {
+        "terser-webpack-plugin": "^5.3.9",
+        "sass": "^1.62.0"
+    }
+}
