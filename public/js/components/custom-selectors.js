@@ -4,9 +4,11 @@ export default class CustomSelectors {
             this.parent = parent;
             this.selectedItem = this.parent.querySelectorAll('.search__select-item-selected');
             this.items = this.parent.querySelectorAll('.search__select-item');
+            this.body = document.querySelector('body');
 
             this.initSelectedSize();
             this.initItems();
+            this.onClickBody();
         }
     }
 
@@ -39,6 +41,12 @@ export default class CustomSelectors {
                 this.selectedItem[index].textContent = selected.textContent;
                 this.selectedItem[index].dataset.value = selected.dataset.value;
                 this.selectedItem[index].addEventListener('click', () => {
+                    this.selectedItem.forEach(select => {
+                        if (select != this.selectedItem[index] && select.parentElement.classList.contains('opened')) {
+                            select.click();
+                        }
+                    });
+
                     if (parent) {
                         if (parent.classList.contains('opened')) {
                             parent.classList.remove('opened');
@@ -50,6 +58,25 @@ export default class CustomSelectors {
                     }
                 });
             }
+        }
+    }
+
+    onClickBody() {
+        if (this.body) {
+            this.body.addEventListener('click', event => {
+                const {target} = event;
+
+                if (target) {
+                    if (!target.matches('.search__select-item-selected') &&
+                        !target.matches('.search__select-item') && !target.matches('.search__select')) {
+                        this.selectedItem.forEach(select => {
+                            if (select.parentElement.classList.contains('opened')) {
+                                select.click();
+                            }
+                        });
+                    }
+                }
+            });
         }
     }
 }
