@@ -1,33 +1,33 @@
 .pagination {
-  @include flex($align-items: center, $justify-content: center);
+    @include flex($align-items: center, $justify-content: center);
 
-  margin-top: 20px;
+    margin-top: 20px;
 
-  &__page {
-    @include fonts('Poppins', 14px, 500, $main_gray, 20px);
+    &__page {
+        @include fonts('Poppins', 14px, 500, $main_gray, 20px);
 
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: transparent;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    transition: all .3s;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        transition: all .3s;
 
-    &:not([data-index="..."]):hover {
-      box-shadow: 0 0 5px 8px rgba(10, 37, 48, 0.3);
-      background-color: $main_dark;
-      color: $white;
+        &:not([data-index="..."]):hover {
+            box-shadow: 0 0 5px 8px rgba(10, 37, 48, 0.3);
+            background-color: $main_dark;
+            color: $white;
+        }
+
+        &.selected {
+            background-color: $main_dark;
+            color: $white;
+        }
+
+        & + .pagination__page {
+            margin-left: 2px;
+        }
     }
-
-    &.selected {
-      background-color: $main_dark;
-      color: $white;
-    }
-
-    & + .pagination__page {
-      margin-left: 2px;
-    }
-  }
 }

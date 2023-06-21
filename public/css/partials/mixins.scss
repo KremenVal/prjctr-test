@@ -1,38 +1,38 @@
 @mixin fonts($family, $size, $weight, $color: $white, $line_height: 1) {
-  font: {
-    family: $family, sans-serif;
-    size: $size;
-    weight: $weight;
-  }
-  color: $color;
-  line-height: $line_height;
+	font: {
+		family: $family, sans-serif;
+		size: $size;
+		weight: $weight;
+	}
+	color: $color;
+	line-height: $line_height;
 }
 
 @mixin backgrounds($size: contain, $image) {
-  background: {
-    repeat: no-repeat;
-    size: $size;
-    position: center;
-    image: $image;
-  };
+	background: {
+		repeat: no-repeat;
+		size: $size;
+		position: center;
+		image: $image;
+	};
 }
 
 @mixin flex($flex-direction: row, $align-items: normal, $justify-content: normal, $flex-wrap: nowrap) {
-  display: flex;
+	display: flex;
 
-  @if $flex-direction != row {
-    flex-direction: $flex-direction;
-  }
+	@if $flex-direction != row {
+		flex-direction: $flex-direction;
+	}
 
-  @if $align-items != normal {
-    align-items: $align-items;
-  }
+	@if $align-items != normal {
+		align-items: $align-items;
+	}
 
-  @if $justify-content != normal {
-    justify-content: $justify-content;
-  }
+	@if $justify-content != normal {
+		justify-content: $justify-content;
+	}
 
-  @if $flex-wrap != nowrap {
-    flex-wrap: $flex-wrap;
-  }
+	@if $flex-wrap != nowrap {
+		flex-wrap: $flex-wrap;
+	}
 }

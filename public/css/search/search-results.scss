@@ -1,58 +1,58 @@
 .results {
-  display: none;
-  width: 100%;
+	display: none;
+	width: 100%;
 
-  &.shown {
-    @include flex($flex-direction: column);
-  }
+	&.shown {
+		@include flex($flex-direction: column);
+	}
 
-  &__options {
-    @include flex($align-items: center, $justify-content: space-between);
+	&__options {
+		@include flex($align-items: center, $justify-content: space-between);
 
-    &-filters {
-      @include fonts('Poppins', 16px, 400, $search_gray, 24px);
-    }
+		&-filters {
+			@include fonts('Poppins', 16px, 400, $search_gray, 24px);
+		}
 
-    &-reset {
-      @include fonts('Poppins', 14px, 400, $search_gray, 16px);
+		&-reset {
+			@include fonts('Poppins', 14px, 400, $search_gray, 16px);
 
-      text-decoration: underline;
-      cursor: pointer;
-    }
-  }
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
 
-  &__list {
-    @include flex($align-items: center, $flex-wrap: wrap);
+	&__list {
+		@include flex($align-items: center, $flex-wrap: wrap);
 
-    margin-top: 13px;
+		margin-top: 13px;
 
-    &-item {
-      @include fonts('Poppins', 14px, 400, $black, 16px);
+		&-item {
+			@include fonts('Poppins', 14px, 400, $black, 16px);
 
-      background-color: $light_gray;
-      border-radius: 4px;
-      padding: 7px 12px;
-      display: flex;
-      align-items: center;
-      
-      & + .results__list-item {
-        margin-left: 8px;
-      }
+			background-color: $light_gray;
+			border-radius: 4px;
+			padding: 7px 12px;
+			display: flex;
+			align-items: center;
 
-      &:after {
-        content: '';
-        width: 12px;
-        height: 12px;
-        display: block;
-        background: {
-          position: center;
-          repeat: no-repeat;
-          size: 8px 8px;
-          image: url(../img/search/cross.svg);
-        };
-        margin-left: 6px;
-        cursor: pointer;
-      }
-    }
-  }
+			& + .results__list-item {
+				margin-left: 8px;
+			}
+
+			&:after {
+				content: '';
+				width: 12px;
+				height: 12px;
+				display: block;
+				background: {
+					position: center;
+					repeat: no-repeat;
+					size: 8px 8px;
+					image: url(../img/search/cross.svg);
+				};
+				margin-left: 6px;
+				cursor: pointer;
+			}
+		}
+	}
 }
