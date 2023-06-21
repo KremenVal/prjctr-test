@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Sounds</title>
+  <meta name="theme-color"
+        content="#083644">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="../public/assets/css/theme_search.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__container container">
+    <span class="header__container-back">Back</span>
+    <ul class="header__container-list">
+      <li class="header__container-item favorite"></li>
+      <li class="header__container-item saved"></li>
+    </ul>
+  </div>
+</header>
+<div class="main">
+  <section class="content container">
+    <form class="search shown"
+          action="#">
+      <label for="artist">
+        <input type="text"
+               class="search__artist"
+               placeholder="Artist"
+               data-length="10"
+               value=""
+               id="artist"
+               name="artist">
+        <span class="search__artist-error">You reached the maximum of length for search.</span>
+      </label>
+      <div class="search__empty">
+        <ul class="search__select"
+            id="genre">
+          <li class="search__select-item-selected"
+              data-default="Genre"
+              data-value="">Genre</li>
+          <li class="search__select-item"
+              data-value="Rock">
+            <label for="rock"
+                   class="search__select-label">
+              <input type="checkbox"
+                     name="genre"
+                     id="rock">
+              <span class="search__select-checkmark"></span>
+              Rock
+            </label>
+          </li>
+          <li class="search__select-item"
+              data-value="Funk">
+            <label for="funk"
+                   class="search__select-label">
+              <input type="checkbox"
+                     name="genre"
+                     id="funk">
+              <span class="search__select-checkmark"></span>
+              Funk
+            </label>
+          </li>
+          <li class="search__select-item"
+              data-value="Beats">
+            <label for="beats"
+                   class="search__select-label">
+              <input type="checkbox"
+                     name="genre"
+                     id="beats">
+              <span class="search__select-checkmark"></span>
+              Beats
+            </label>
+          </li>
+          <li class="search__select-item"
+              data-value="Hip Hop">
+            <label for="hip_hop"
+                   class="search__select-label">
+              <input type="checkbox"
+                     name="genre"
+                     id="hip_hop">
+              <span class="search__select-checkmark"></span>
+              Hip Hop
+            </label>
+          </li>
+          <li class="search__select-item"
+              data-value="Pop">
+            <label for="pop"
+                   class="search__select-label">
+              <input type="checkbox"
+                     name="genre"
+                     id="pop">
+              <span class="search__select-checkmark"></span>
+              Pop
+            </label>
+          </li>
+          <li class="search__select-item"
+              data-value="Rap">
+            <label for="rap"
+                   class="search__select-label">
+              <input type="checkbox"
+                     name="genre"
+                     id="rap">
+              <span class="search__select-checkmark"></span>
+              Rap
+            </label>
+          </li>
+        </ul>
+        <ul class="search__select"
+            id="decade">
+          <li class="search__select-item-selected"
+              data-default="Decade"
+              data-value="">Decade</li>
+          <li class="search__select-item"
+              data-value="1950-1960">1950-60 рр.</li>
+          <li class="search__select-item"
+              data-value="1960-1970">1960-70 рр.</li>
+          <li class="search__select-item"
+              data-value="1970-1980">1970-80 рр.</li>
+          <li class="search__select-item"
+              data-value="1980-1990">1980-90 рр.</li>
+          <li class="search__select-item"
+              data-value="1990-2000">1990-00 рр.</li>
+          <li class="search__select-item"
+              data-value="2000-2010">2000-10 рр.</li>
+          <li class="search__select-item"
+              data-value="2010-2020">2010-20 рр.</li>
+          <li class="search__select-item"
+              data-value="2020-2030">2020-30 рр.</li>
+        </ul>
+      </div>
+      <div class="search__empty">
+        <ul class="search__select"
+            id="country">
+          <li class="search__select-item-selected"
+              data-default="Country"
+              data-value="">Country</li>
+          <li class="search__select-item"
+              data-value="USA">USA</li>
+          <li class="search__select-item"
+              data-value="UK">UK</li>
+          <li class="search__select-item"
+              data-value="UA">UA</li>
+          <li class="search__select-item"
+              data-value="PL">PL</li>
+          <li class="search__select-item"
+              data-value="UAE">UAE</li>
+          <li class="search__select-item"
+              data-value="JP">JP</li>
+        </ul>
+      </div>
+      <button type="submit"
+              class="search__submit">Search</button>
+    </form>
+    <div class="results">
+      <div class="results__options">
+        <span class="results__options-filters">Filters applied :</span>
+        <span class="results__options-reset">Reset changes</span>
+      </div>
+      <ul class="results__list"></ul>
+    </div>
+    <ul class="songs"></ul>
+    <nav class="pagination">
+    </nav>
+  </section>
+</div>
+<script src="../public/assets/js/theme_search.js"></script>
+</body>
+</html>

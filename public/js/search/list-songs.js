@@ -28,7 +28,7 @@ export default class ListSongs {
                         'data-country': song.country,
                     }),
                     img = HTML.createElement('img', 'songs__item-img', {
-                        src: song.img,
+                        src: `../${song.img}`,
                         alt: song.song,
                         width: '169px',
                         height: '169px'

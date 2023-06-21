@@ -6,11 +6,16 @@ export default class Search {
         this.pagination = pagination;
         this.listSongs = listSongs;
         this.searchArtist = document.querySelector('.search__artist');
+        this.results;
 
         if (this.search) {
             this.init();
             this.onInputArtist();
         }
+    }
+
+    setResult(result) {
+        this.results = result;
     }
 
     onInputArtist() {
@@ -52,6 +57,8 @@ export default class Search {
 
     searchByData(data) {
         let matched = [];
+        this.results.results.classList.remove('shown');
+        this.search.classList.add('shown');
 
         this.allSongs.forEach(song => {
             let count = 0;
@@ -70,13 +77,28 @@ export default class Search {
                     }
                 }
 
-                count += search.indexOf(searching[1].toLowerCase()) !== -1 ? 1 : 0;
+                if (searching[1].indexOf(',') !== -1 || search.indexOf(',') !== -1) {
+                    const arraySearch = search.split(',').filter(value => value !== ''),
+                        arraySearching = searching[1].toLowerCase().split(',').filter(value => value !== ''),
+                        intersection = arraySearch.filter(element => arraySearching.includes(element));
+
+                    count += intersection.length > 0 ? 1 : 0;
+                } else {
+                    count += search.indexOf(searching[1].toLowerCase()) !== -1 ? 1 : 0;
+                }
             });
 
             if (count === data.length) {
                 matched.push(song);
             }
         });
+
+        if (!matched.length) {
+            matched = JSON.parse(localStorage.getItem('songs'));
+        } else {
+            this.search.classList.remove('shown');
+            this.results.renderResults(data);
+        }
 
         this.listSongs.setAllSongs(matched);
         this.pagination.setPageCount(Math.ceil(matched.length / this.perPage) || 1);

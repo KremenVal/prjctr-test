@@ -1,0 +1,28 @@
+@import "partials/colors";
+@import "partials/mixins";
+@import "search/header";
+@import "search/search";
+@import "search/songs";
+@import "search/pagination";
+@import "search/search-results";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  padding: 20px;
+
+  @media (min-width: 1200px) {
+    max-width: 1160px;
+  }
+}
+
+.content {
+  margin: 0 auto;
+}

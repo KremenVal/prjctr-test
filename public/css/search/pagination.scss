@@ -1,34 +1,29 @@
 .pagination {
+  @include flex($align-items: center, $justify-content: center);
+
   margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   &__page {
+    @include fonts('Poppins', 14px, 500, $main_gray, 20px);
+
     width: 40px;
     height: 40px;
     border-radius: 8px;
     background-color: transparent;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
     text-align: center;
-    color: #738286;
     cursor: pointer;
     border: none;
     transition: all .3s;
 
     &:not([data-index="..."]):hover {
       box-shadow: 0 0 5px 8px rgba(10, 37, 48, 0.3);
-      background-color: #0A2530;
-      color: #fff;
+      background-color: $main_dark;
+      color: $white;
     }
 
     &.selected {
-      background-color: #0A2530;
-      color: #fff;
+      background-color: $main_dark;
+      color: $white;
     }
 
     & + .pagination__page {

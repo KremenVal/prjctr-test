@@ -1,13 +1,16 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
 
 let config = {
     entry: {
         theme: [
             './js/theme.js',
             './css/theme.scss'
+        ],
+        theme_search: [
+            './js/theme-search.js',
+            './css/theme-search.scss'
         ],
     },
     output: {

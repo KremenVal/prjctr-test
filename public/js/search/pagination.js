@@ -25,28 +25,31 @@ export default class Pagination {
         const arrayPagination = this.getPagination(this.currentPage, this.pageCount);
 
         this.pagination.replaceChildren();
-        arrayPagination.forEach(page => {
-            let pageButton = HTML.createElement('button', 'pagination__page', {
-                'data-index': page,
-                'aria-label': `Page ${page}`
-            }, page);
 
-            this.currentPage === page ? pageButton.classList.add('selected') : '';
+        if (arrayPagination.length > 1) {
+            arrayPagination.forEach(page => {
+                let pageButton = HTML.createElement('button', 'pagination__page', {
+                    'data-index': page,
+                    'aria-label': `Page ${page}`
+                }, page);
 
-            pageButton.addEventListener('click', () => {
-                if (page !== '...') {
-                    const url = window.location.href.split('?')[0] + (page !== 1 ? `?page=${page}` : '');
-                    this.pagination.replaceChildren();
-                    this.currentPage = page;
-                    history.replaceState(null, "", url);
+                this.currentPage === page ? pageButton.classList.add('selected') : '';
 
-                    this.listSongs.renderSongs(this.getStartListSongs());
-                    this.renderPagination();
-                }
+                pageButton.addEventListener('click', () => {
+                    if (page !== '...') {
+                        const url = window.location.href.split('?')[0] + (page !== 1 ? `?page=${page}` : '');
+                        this.pagination.replaceChildren();
+                        this.currentPage = page;
+                        history.replaceState(null, "", url);
+
+                        this.listSongs.renderSongs(this.getStartListSongs());
+                        this.renderPagination();
+                    }
+                });
+
+                this.pagination.append(pageButton);
             });
-
-            this.pagination.append(pageButton);
-        });
+        }
 
         this.listSongs.renderSongs(this.getStartListSongs());
     }

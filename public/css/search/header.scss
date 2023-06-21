@@ -1,39 +1,29 @@
 .header {
-  background-color: #083644;
+  background-color: $dark_blue;
 
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex($align-items: center, $justify-content: space-between);
+
     margin: 0 auto;
 
     &-back {
-      font-family: 'Poppins', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 27px;
-      color: #FFFFFF;
+      @include fonts('Poppins', 18px, 400, $white, 27px);
+      @include flex($align-items: center);
+
       cursor: pointer;
-      display: flex;
-      align-items: center;
 
       @media (min-width: 768px) {
         font-size: 22px;
       }
 
       &:before {
+        @include backgrounds(24px 12px, url(../img/header/back-arrow.svg));
+
         content: '';
         display: block;
         width: 24px;
         height: 24px;
         margin-right: 6px;
-        background: {
-          repeat: no-repeat;
-          size: 24px 12px;
-          position: center;
-          image: url(../img/header/back-arrow.svg);
-        };
 
         @media (min-width: 768px) {
           width: 26px;
@@ -44,19 +34,15 @@
     }
 
     &-list {
-      display: flex;
-      align-items: center;
+      @include flex($align-items: center);
     }
 
     &-item {
+      @include backgrounds(18px 16px, '');
+
       width: 24px;
       height: 24px;
       cursor: pointer;
-      background: {
-        position: center;
-        size: 18px 16px;
-        repeat: no-repeat;
-      };
 
       @media (min-width: 768px) {
         width: 28px;
