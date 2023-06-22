@@ -94,7 +94,7 @@ export default class CustomSelectors {
 						if (index !== -1) {
 							searching.splice(index, 1);
 						} else {
-							searching.push(item.textContent.replace(/(\r\n|\n|\r)/gm, "").replaceAll(' ', ''));
+							searching.push(item.textContent.replace(/(\r\n|\n|\r|\t)/gm, "").replaceAll(' ', ''));
 						}
 
 						selected.textContent = !searching.length ? selected.dataset.default : searching.join(',');

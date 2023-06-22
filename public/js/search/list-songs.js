@@ -69,6 +69,8 @@ export default class ListSongs {
 
 				this.parent.append(li);
 			}
+
+			window.dispatchEvent(new Event('resize'));
 		}
 	}
 

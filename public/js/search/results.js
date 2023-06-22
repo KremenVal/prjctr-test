@@ -93,6 +93,10 @@ export default class Results {
 					this.list.append(li);
 				}
 			}
+
+			if (this.list.children.length === 0) {
+				this.reset.click();
+			}
 		}
 	}
 }
